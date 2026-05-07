@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>JLOODNA Product</title>
+
+  <link rel="stylesheet" href="product.css">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+
+  <header class="header">
+
+    <div class="logo">
+      JLOODNA
+    </div>
+
+    <nav class="nav">
+      <a href="#">Akèy</a>
+      <a href="#">Boutik</a>
+      <a href="#">Sou Nou</a>
+      <a href="#">Kontak</a>
+    </nav>
+
+    <div class="header-icons">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+
+  </header>
+
+  <!-- BREADCRUMBS -->
+
+  <section class="breadcrumbs">
+
+    <a href="#">Akèy</a>
+
+    <span>></span>
+
+    <a href="#">Boutik</a>
+
+    <span>></span>
+
+    <a href="#" id="breadcrumb-category">
+      Kategori
+    </a>
+
+    <span>></span>
+
+    <span id="breadcrumb-product">
+      Pwodwi
+    </span>
+
+  </section>
+
+  <!-- PRODUCT SECTION -->
+
+  <section class="product-section">
+
+    <!-- LEFT SIDE -->
+
+    <div class="product-gallery">
+
+      <div class="main-image-box">
+
+        <img src=""
+        id="main-image"
+        class="main-image">
+
+      </div>
+
+      <!-- THUMBNAILS -->
+
+      <div class="thumbnails"
+      id="thumbnails">
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+
+    <div class="product-info">
+
+      <h1 id="product-name">
+        Product Name
+      </h1>
+
+      <div class="product-price"
+      id="product-price">
+        $0
+      </div>
+
+      <!-- QUICK FEATURES -->
+
+      <div class="features">
+
+        <h3>Karakteristik Rapid</h3>
+
+        <ul id="product-features">
+
+        </ul>
+
+      </div>
+
+      <!-- QUANTITY -->
+
+      <div class="quantity-box">
+
+        <label>Kantite :</label>
+
+        <input type="number"
+        value="1"
+        min="1"
+        id="quantity">
+
+      </div>
+
+      <!-- BUTTON -->
+
+      <button id="add-cart-btn">
+        AJOUTE NAN PANYEN
+      </button>
+
+      <p class="success-message"
+      id="success-message">
+        Pwodwi ajoute !
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- TABS -->
+
+  <section class="tabs-section">
+
+    <div class="tabs">
+
+      <button class="tab-btn active"
+      data-tab="description">
+        Deskripsyon
+      </button>
+
+      <button class="tab-btn"
+      data-tab="delivery">
+        Livrezon
+      </button>
+
+    </div>
+
+    <div class="tab-content active"
+    id="description">
+
+      <p id="product-description">
+
+      </p>
+
+    </div>
+
+    <div class="tab-content"
+    id="delivery">
+
+      <p>
+        JLOODNA livre pwodwi yo rapidman
+        atravè sèvis livrezon serye.
+        Livrezon disponib Ayiti ak lòt peyi.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- RELATED PRODUCTS -->
+
+  <section class="related-products">
+
+    <h2>Pwodwi ki Sanble</h2>
+
+    <div class="related-grid"
+    id="related-grid">
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="footer-content">
+
+      <div>
+        <h3>JLOODNA</h3>
+        <p>Global Trading Distribution</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </div>
+
+      <div class="socials">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-whatsapp"></i>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script src="product.js"></script>
+
+</body>
+  </html>
