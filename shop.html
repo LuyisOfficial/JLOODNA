@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JLOODNA SHOP</title>
+
+  <link rel="stylesheet" href="shop.css">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+
+  <header class="header">
+
+    <div class="logo">
+      JLOODNA
+    </div>
+
+    <nav class="nav">
+      <a href="#">Akèy</a>
+      <a href="#">Boutik</a>
+      <a href="#">Sou Nou</a>
+      <a href="#">Kontak</a>
+    </nav>
+
+    <div class="cart-search">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+
+  </header>
+
+  <!-- SHOP HERO -->
+
+  <section class="shop-hero">
+
+    <h1>JLOODNA SHOP</h1>
+
+    <p>
+      Chèche pi bon pwodwi teknoloji ak akseswa kalite.
+    </p>
+
+  </section>
+
+  <!-- SHOP CONTAINER -->
+
+  <section class="shop-container">
+
+    <!-- FILTERS -->
+
+    <aside class="filters">
+
+      <h2>Kategori</h2>
+
+      <div class="filter-group">
+
+        <button class="filter-btn active"
+        data-category="all">
+          Tout pwodwi
+        </button>
+
+        <button class="filter-btn"
+        data-category="mobile">
+          Teknoloji Mobil
+        </button>
+
+        <button class="filter-btn"
+        data-category="accessories">
+          Akseswa Elektwonik
+        </button>
+
+        <button class="filter-btn"
+        data-category="care">
+          Swen Pèsonèl
+        </button>
+
+      </div>
+
+      <h2>Triye pa</h2>
+
+      <select id="sort-select">
+
+        <option value="default">
+          Chwazi
+        </option>
+
+        <option value="low-high">
+          Pri pi ba rive pi wo
+        </option>
+
+        <option value="high-low">
+          Pri pi wo rive pi ba
+        </option>
+
+        <option value="newest">
+          Dènye pwodwi yo
+        </option>
+
+      </select>
+
+    </aside>
+
+    <!-- PRODUCTS SIDE -->
+
+    <div class="products-area">
+
+      <!-- SEARCH -->
+
+      <div class="search-box">
+
+        <input type="text"
+        id="search-input"
+        placeholder="Chèche yon pwodwi (ex: Samsung, Kask...)">
+
+        <button>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+      </div>
+
+      <!-- PRODUCTS GRID -->
+
+      <div class="products-grid"
+      id="products-grid">
+
+      </div>
+
+      <!-- PAGINATION -->
+
+      <div class="pagination">
+
+        <button class="page-btn active">
+          1
+        </button>
+
+        <button class="page-btn">
+          2
+        </button>
+
+        <button class="page-btn">
+          3
+        </button>
+
+        <button class="page-btn">
+          Next >
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="footer-content">
+
+      <div>
+        <h3>JLOODNA</h3>
+        <p>Global Trading Distribution</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </div>
+
+      <div class="socials">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-whatsapp"></i>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script src="shop.js"></script>
+
+</body>
+      </html>
