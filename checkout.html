@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>JLOODNA Checkout</title>
+
+  <link rel="stylesheet"
+  href="checkout.css">
+</head>
+<body>
+
+  <!-- CHECKOUT -->
+
+  <section class="checkout-container">
+
+    <!-- LEFT -->
+
+    <div class="checkout-form">
+
+      <h1>Enfòmasyon Livrezon</h1>
+
+      <form id="payment-form">
+
+        <!-- PERSONAL -->
+
+        <div class="form-group">
+
+          <label>Non</label>
+
+          <input type="text"
+          id="first-name">
+
+          <small class="error">
+            Tanpri antre non ou
+          </small>
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Siyati</label>
+
+          <input type="text"
+          id="last-name">
+
+          <small class="error">
+            Tanpri antre siyati ou
+          </small>
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Imèl</label>
+
+          <input type="email"
+          id="email">
+
+          <small class="error">
+            Tanpri antre imèl ou
+          </small>
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Telefòn</label>
+
+          <input type="text"
+          id="phone">
+
+          <small class="error">
+            Tanpri antre telefòn ou
+          </small>
+
+        </div>
+
+        <!-- ADDRESS -->
+
+        <h2>Adrès Livrezon</h2>
+
+        <div class="form-group">
+
+          <label>Adrès</label>
+
+          <input type="text"
+          id="address">
+
+          <small class="error">
+            Tanpri antre adrès ou
+          </small>
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Vil</label>
+
+          <input type="text"
+          id="city">
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Depatman</label>
+
+          <select id="department">
+
+            <option value="">
+              Chwazi Depatman
+            </option>
+
+            <option>Lwès</option>
+            <option>Nò</option>
+            <option>Nip</option>
+            <option>Sid</option>
+
+          </select>
+
+        </div>
+
+        <!-- DELIVERY -->
+
+        <h2>Metòd Livrezon</h2>
+
+        <div class="radio-group">
+
+          <label>
+            <input type="radio"
+            name="delivery"
+            checked>
+
+            Livrezon lakay
+          </label>
+
+          <label>
+            <input type="radio"
+            name="delivery">
+
+            Vin chèche nan biwo Jloodna
+          </label>
+
+        </div>
+
+      </form>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="checkout-summary">
+
+      <h2>Rezime Kòmand</h2>
+
+      <div class="checkout-item">
+
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1000&auto=format&fit=crop">
+
+        <div>
+          <h3>Samsung Galaxy S24</h3>
+          <p>$899</p>
+        </div>
+
+      </div>
+
+      <div class="checkout-item">
+
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop">
+
+        <div>
+          <h3>Wireless Headphones</h3>
+          <p>$120</p>
+        </div>
+
+      </div>
+
+      <!-- PAYMENT -->
+
+      <h2>Metòd Peman</h2>
+
+      <div class="payment-methods">
+
+        <label>
+          <input type="radio"
+          name="payment"
+          checked>
+
+          Kat Kredi (Visa/Mastercard)
+        </label>
+
+        <label>
+          <input type="radio"
+          name="payment">
+
+          MonCash / Natcash
+        </label>
+
+        <label>
+          <input type="radio"
+          name="payment">
+
+          Peman nan livrezon
+        </label>
+
+      </div>
+
+      <!-- TOTAL -->
+
+      <div class="checkout-total">
+
+        <span>Total :</span>
+
+        <strong>$1034</strong>
+
+      </div>
+
+      <!-- BUTTON -->
+
+      <button id="confirm-btn">
+        KONFIME PEMAN
+      </button>
+
+      <p class="secure-text">
+        Peman sekirize pa
+        Jloodna Global Trading
+      </p>
+
+      <p class="success-payment"
+      id="success-payment">
+        Peman konfime avèk siksè !
+      </p>
+
+    </div>
+
+  </section>
+
+  <script src="checkout.js"></script>
+
+</body>
+  </html>
