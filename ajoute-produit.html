@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>Ajoute Pwodwi | JLOODNA ADMIN</title>
+
+  <link rel="stylesheet"
+  href="ajoute-produit.css">
+
+  <!-- FONT AWESOME -->
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar">
+
+    <div class="logo">
+      JLOODNA ADMIN
+    </div>
+
+    <nav class="sidebar-menu">
+
+      <a href="#">
+        <i class="fa-solid fa-gauge"></i>
+        Dashboard
+      </a>
+
+      <a href="#" class="active">
+
+        <i class="fa-solid fa-box"></i>
+        Ajoute Pwodwi
+
+      </a>
+
+      <a href="#">
+
+        <i class="fa-solid fa-cart-shopping"></i>
+        Kòmand
+
+      </a>
+
+      <a href="#">
+
+        <i class="fa-solid fa-users"></i>
+        Kliyan
+
+      </a>
+
+      <a href="#">
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Dekonekte
+
+      </a>
+
+    </nav>
+
+  </aside>
+
+  <!-- MAIN -->
+
+  <main class="main-content">
+
+    <!-- TOP -->
+
+    <div class="top-bar">
+
+      <h1>
+        Ajoute yon nouvo pwodwi nan Jloodna
+      </h1>
+
+      <button class="save-draft">
+        Save Draft
+      </button>
+
+    </div>
+
+    <!-- FORM CARD -->
+
+    <div class="form-container">
+
+      <form id="product-form">
+
+        <!-- PRODUCT NAME -->
+
+        <div class="form-group">
+
+          <label>
+            Non Pwodwi
+          </label>
+
+          <input type="text"
+          id="product-name"
+          placeholder="Ex: iPhone 15 Pro">
+
+          <small class="error">
+            Tanpri antre non pwodwi a
+          </small>
+
+        </div>
+
+        <!-- PRICE -->
+
+        <div class="form-group">
+
+          <label>
+            Pri ($)
+          </label>
+
+          <input type="number"
+          id="product-price"
+          placeholder="999">
+
+          <small class="error">
+            Tanpri antre pri pwodwi a
+          </small>
+
+        </div>
+
+        <!-- CATEGORY -->
+
+        <div class="form-group">
+
+          <label>
+            Kategori
+          </label>
+
+          <select id="product-category">
+
+            <option value="">
+              Chwazi kategori a
+            </option>
+
+            <option>
+              Teknoloji
+            </option>
+
+            <option>
+              Akseswa Elektwonik
+            </option>
+
+            <option>
+              Swen Pèsonèl
+            </option>
+
+          </select>
+
+          <small class="error">
+            Tanpri chwazi kategori a
+          </small>
+
+        </div>
+
+        <!-- IMAGE -->
+
+        <div class="form-group">
+
+          <label>
+            Foto Pwodwi
+          </label>
+
+          <input type="file"
+          id="product-image"
+          accept=".jpg,.jpeg,.png">
+
+          <small class="error">
+            Tanpri ajoute yon foto
+          </small>
+
+        </div>
+
+        <!-- IMAGE PREVIEW -->
+
+        <div class="image-preview"
+        id="image-preview">
+
+          <p>
+            Preview pwodwi a ap parèt isit la
+          </p>
+
+        </div>
+
+        <!-- DESCRIPTION -->
+
+        <div class="form-group">
+
+          <label>
+            Deskripsyon
+          </label>
+
+          <textarea id="product-description"
+          placeholder="Detaye tout sa pwodwi a fè..."></textarea>
+
+          <small class="error">
+            Tanpri ajoute deskripsyon an
+          </small>
+
+        </div>
+
+        <!-- FEATURED -->
+
+        <div class="checkbox-group">
+
+          <input type="checkbox"
+          id="featured-product">
+
+          <label for="featured-product">
+
+            Mete pwodwi sa a sou paj Akèy la
+            kòm "Best Seller"
+
+          </label>
+
+        </div>
+
+        <!-- SUBMIT -->
+
+        <button type="submit"
+        class="publish-btn">
+
+          Pibliye Pwodwi a
+
+        </button>
+
+        <!-- SUCCESS -->
+
+        <div class="success-message"
+        id="success-message">
+
+          Pwodwi a ajoute avèk siksè
+          nan baz de done Jloodna a.
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </main>
+
+  <script src="ajoute-produit.js"></script>
+
+</body>
+            </html>
