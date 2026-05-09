@@ -35,11 +35,41 @@ body{
 }
 
 .logo{
-  display:flex;
-  color:#FFCC00;
-  font-size:1.2rem;
-  font-weight:bold;
-  letter-spacing:2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  color: #FFCC00;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  font-weight: bold;
+  letter-spacing: 2px;
+
+  max-width: 100%;
+  overflow: hidden;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px){
+  .logo{
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px){
+  .logo{
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+.logo img{
+  width: clamp(40px, 8vw, 70px);
+  height: auto;
+  object-fit: contain;
 }
 
 .nav{
