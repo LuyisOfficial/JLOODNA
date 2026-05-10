@@ -75,6 +75,93 @@ body{
     gap: 20px;
 }
 
+
+
+
+/* 6. Chat Flottant */
+.chat-floating {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.chat-menu {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    display: none; /* Caché par défaut */
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.chat-menu.active {
+    display: flex;
+}
+
+.chat-option {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: var(--dark);
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-option:hover {
+    background: var(--gray);
+}
+
+/* 7. Mobile Menu (Media Queries) */
+.menu-toggle {
+    display: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none; /* Masqué sur mobile par défaut */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--dark);
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}
+
+
+
 .nav-links a {
     color: var(--white);
     text-decoration: none;
