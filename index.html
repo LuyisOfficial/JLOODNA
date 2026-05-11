@@ -2,313 +2,238 @@
 <html lang="fr">
 <head>
 
-  <!-- ========================= -->
-  <!-- BASIC SEO -->
-  <!-- ========================= -->
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO TITLE -->
-  <title>JLOODNA 📦🚀 | Global Trading</title>
+  <title>JLOODNA SHOP | Global Trading</title>
 
-  <!-- META DESCRIPTION -->
   <meta 
     name="description"
-    content="🛍️ Chez Jloodna S.R.L | Global Trading. Votre destination shopping incontournable pour les meilleures tendances. Qualité garantie au meilleur prix. Expédition disponible partout en Haïti et Santo Domingo 🛒🚀"
+    content="Boutique moderne Jloodna Global Trading. High-Tech, Mode, Maison & Lifestyle."
   >
 
-  <!-- SEO KEYWORDS -->
-  <meta 
-    name="keywords"
-    content="Global Trading, Import Export Ayiti, Magasin an liy, Elektwonik, Achte an gwo, Komès entènasyonal, Jloodna, Livrezon rapid, Wholesale Haiti"
-  >
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 
-  <!-- AUTHOR -->
-  <meta name="author" content="Jloodna 📦🚀 | Global Trading">
-
-  <!-- ROBOTS -->
-  <meta name="robots" content="index, follow">
-
-  <!-- GOOGLE VERIFICATION -->
-  <meta 
-    name="google-site-verification"
-    content="b8TOXrREoCgHdHGvngqDjdknFhCM-Hmca9rgJLxRaYo"
-  >
-
-  <!-- CANONICAL URL -->
-  <link rel="canonical" href="https://jloodna.com/">
-
-  <!-- ========================= -->
-  <!-- OPEN GRAPH / FACEBOOK -->
-  <!-- ========================= -->
-
-  <meta property="og:title" content="Jloodna 📦🚀 | Global Trading">
-
-  <meta 
-    property="og:description"
-    content="Pi bon pwodwi import-export ak distribisyon nasyonal an Ayiti."
-  >
-
-  <meta property="og:image" content="https://jloodna.com/logo.png">
-
-  <meta property="og:url" content="https://jloodna.com">
-
-  <meta property="og:type" content="website">
-
-  <!-- ========================= -->
-  <!-- TWITTER SEO -->
-  <!-- ========================= -->
-
-  <meta name="twitter:card" content="summary_large_image">
-
-  <meta name="twitter:title" content="Jloodna 📦🚀 | Global Trading">
-
-  <meta 
-    name="twitter:description"
-    content="Achte pwodwi entènasyonal kalite ak livrezon rapid."
-  >
-
-  <meta 
-    name="twitter:image"
-    content="https://jloodna.com/logo.png"
-  >
-
-  <!-- ========================= -->
-  <!-- FAVICON -->
-  <!-- ========================= -->
-
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <!-- ========================= -->
   <!-- FONT AWESOME -->
-  <!-- ========================= -->
-
   <link 
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   >
 
-  <!-- ========================= -->
-  <!-- IONICONS -->
-  <!-- ========================= -->
-
-  <script 
-    type="module"
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js">
-  </script>
-
-  <script 
-    nomodule
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js">
-  </script>
-
-  <!-- ========================= -->
-  <!-- CSS -->
-  <!-- ========================= -->
-
-  <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
+  <!-- ========================= -->
   <!-- HEADER -->
+  <!-- ========================= -->
+
   <header class="header">
 
-    <nav class="navbar">
+    <div class="logo">
 
-      <!-- LOGO -->
-      <div class="logo">
-        <img src="./logo.png" alt="JLOODNA Logo">
-        <span>JLOODNA 📦🚀</span>
-      </div>
+      <img src="./logo.png" alt="Jloodna Logo">
 
-      <!-- MOBILE MENU ICON -->
-      <div class="menu-toggle">
-        <ion-icon name="menu-outline"></ion-icon>
+      <span>JLOODNA</span>
+
+    </div>
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+      <input 
+        type="text"
+        placeholder="Rechercher un produit..."
+      >
+
+      <button>
+        <i class="fa-solid fa-search"></i>
+      </button>
+
+    </div>
+
+    <!-- HEADER ICONS -->
+
+    <div class="header-icons">
+
+      <!-- CART -->
+
+      <div class="cart-box">
+
+        <i class="fa-solid fa-cart-shopping"></i>
+
+        <span id="cart-count">3</span>
+
       </div>
 
       <!-- MENU -->
-      <ul class="nav-links">
 
-        <li>
-          <a href="./index.html" class="btn-primary">
-            AKÈY
+      <div class="menu-toggle" id="menuToggle">
+
+        <i class="fa-solid fa-bars"></i>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- MOBILE MENU -->
+
+  <nav class="mobile-menu" id="mobileMenu">
+
+    <a href="#">Accueil</a>
+    <a href="#">Boutique</a>
+    <a href="#">Mode</a>
+    <a href="#">Électronique</a>
+    <a href="#">Maison</a>
+    <a href="#">Contact</a>
+
+  </nav>
+
+  <!-- ========================= -->
+  <!-- HERO SLIDER -->
+  <!-- ========================= -->
+
+  <section class="hero">
+
+    <div class="slider">
+
+      <!-- SLIDE 1 -->
+
+      <div class="slide active">
+
+        <img src="./slider1.jpg" alt="High-Tech">
+
+        <div class="slide-content">
+
+          <h1>HIGH-TECH & ÉLECTRONIQUE</h1>
+
+          <p>Tout sa w bezwen, yon sèl kote.</p>
+
+          <a href="#" class="hero-btn">
+            Découvrir
           </a>
-        </li>
 
-        <li>
-          <a href="./shop.html" class="btn-primary">
-            BOUTIK
-          </a>
-        </li>
-
-        <li>
-          <a href="./about.html" class="btn-primary">
-            APROPO
-          </a>
-        </li>
-
-        <li>
-          <a href="./contact.html" class="btn-primary">
-            CONTACT
-          </a>
-        </li>
-
-        <li>
-          <a href="./b2b.html" class="btn-primary">
-            ACHA AN GRO / B2B
-          </a>
-        </li>
-
-      </ul>
-
-      <!-- HEADER ICONS -->
-      <div class="header-icons">
-
-        <i class="fa-solid fa-magnifying-glass"></i>
-
-        <div class="cart-search">
-          <a href="./cart.html">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span id="cart-count">0</span>
-          </a>
         </div>
 
       </div>
 
-    </nav>
+      <!-- SLIDE 2 -->
 
-  </header>
-<img src="jloodnaimage.png" style="padding: auto; margin: auto; " alt="Jloodna Banner">
-  <!-- HERO -->
-  <section class="hero">
+      <div class="slide">
 
-    <div class="overlay"></div>
+        <img src="./slider2.jpg" alt="Mode">
 
-    
+        <div class="slide-content">
 
-    <div class="hero-content">
+          <h1>MODE & ACCESSOIRES</h1>
 
-      <h1>JLOODNA 📦🚀 | GLOBAL TRADING</h1>
+          <p>Style premium pour tous.</p>
 
-      <p>
-        Solisyon serye pou enpòtasyon ak distribisyon 
-        pwodwi akseswa de bon kalite.
-      </p>
+          <a href="#" class="hero-btn">
+            Acheter
+          </a>
 
-      <a href="./shop.html" class="hero-btn">
-        SHOP NOW
+        </div>
+
+      </div>
+
+      <!-- SLIDE 3 -->
+
+      <div class="slide">
+
+        <img src="./slider3.jpg" alt="Maison">
+
+        <div class="slide-content">
+
+          <h1>MAISON & LIFESTYLE</h1>
+
+          <p>Qualité et innovation.</p>
+
+          <a href="#" class="hero-btn">
+            Explorer
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================= -->
+  <!-- PRODUCTS -->
+  <!-- ========================= -->
+
+  <section class="products-section">
+
+    <div class="section-title">
+
+      <h2>Produits Populaires</h2>
+
+      <p>Découvrez les meilleures offres Jloodna.</p>
+
+    </div>
+
+    <!-- GRID -->
+
+    <div class="products-grid" id="productsGrid">
+
+      <!-- JS PRODUCTS -->
+
+    </div>
+
+    <!-- CTA -->
+
+    <div class="see-more">
+
+      <a href="./shop.html">
+        VOIR PLUS DE PRODUITS
       </a>
 
     </div>
 
   </section>
 
-  <!-- ABOUT -->
-  <section class="about">
-
-    <div class="container">
-
-      <h2>Kisa JLOODNA S.R.L ye ?</h2>
-
-      <p>
-        Magazen ayisyen ki espesyalize nan pote pi bon pwodwi entènasyonal yo pi pre w.
-        Objektif nou se ofri pwodwi akseswa de kalite ak sèvis pwofesyonèl.
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- PRODUCTS -->
-  <section class="products-section" id="products">
-
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Pwodwi ki pi popilè</h2>
-      </div>
-
-      <div class="products-grid" id="products-grid">
-
-        <!-- JS ap ajoute pwodwi yo la -->
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- CHAT -->
-  <div class="chat-menu" id="chatMenu">
-
-    <a 
-      href="./groupe_piblay.html"
-      target="_blank"
-      class="chat-option"
-    >
-      <ion-icon name="people-outline"></ion-icon>
-      GROUP PIBLAY
-    </a>
-
-    <a 
-      href="https://chat.whatsapp.com/LrCq7YCvhDC6yTLXGeAAxY"
-      target="_blank"
-      class="chat-option"
-    >
-      <ion-icon name="people-outline"></ion-icon>
-      GROUP WHATSAPP PIBLAY
-    </a>
-
-    <a 
-      href="https://wa.me/50940894038"
-      target="_blank"
-      class="chat-option"
-    >
-      <ion-icon name="logo-whatsapp"></ion-icon>
-      CONTACT
-    </a>
-
-    <a 
-      href="mailto:info.piblay@gmail.com"
-      class="chat-option"
-    >
-      <ion-icon name="mail-outline"></ion-icon>
-      EMAIL
-    </a>
-
-  </div>
-
+  <!-- ========================= -->
   <!-- FOOTER -->
+  <!-- ========================= -->
+
   <footer class="footer">
 
     <div class="footer-content">
 
       <div>
+
         <h3>JLOODNA</h3>
+
         <p>Global Trading & Distribution</p>
+
       </div>
 
       <div class="footer-links">
-        <a href="./legal.html">Privacy Policy</a>
-        <a href="./about.html">Support</a>
+
+        <a href="#">Privacy Policy</a>
+        <a href="#">Support</a>
+        <a href="#">Contact</a>
+
       </div>
 
-      <!-- SOCIALS -->
       <div class="socials">
 
-        <a href="https://www.facebook.com/jloodna" target="_blank">
+        <a href="#">
           <i class="fa-brands fa-facebook-f"></i>
         </a>
 
-        <a href="https://www.instagram.com/jloodna" target="_blank">
+        <a href="#">
           <i class="fa-brands fa-instagram"></i>
         </a>
 
-        <a href="https://wa.me/message/Y75WJGSGU3JZI1" target="_blank">
+        <a href="#">
           <i class="fa-brands fa-whatsapp"></i>
         </a>
 
@@ -319,7 +244,8 @@
   </footer>
 
   <!-- JS -->
+
   <script src="script.js"></script>
 
 </body>
-    </html>
+  </html>
