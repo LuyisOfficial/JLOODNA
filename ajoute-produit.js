@@ -51,6 +51,202 @@ function showAdminPanel(){
 
 }
 
+// =========================
+// DASHBOARD
+// =========================
+
+function renderDashboard(){
+
+  // DATABASES
+
+  const products =
+  JSON.parse(localStorage.getItem("jloodnaProducts"))
+  || [];
+
+  const orders =
+  JSON.parse(localStorage.getItem("jloodnaOrders"))
+  || [];
+
+  const clients =
+  JSON.parse(localStorage.getItem("jloodnaClients"))
+  || [];
+
+  // TOTAL REVENUE
+
+  let revenue = 0;
+
+  orders.forEach(order => {
+    revenue += order.total;
+  });
+
+  // UPDATE CARDS
+
+  document.getElementById("dashboard-revenue")
+  .textContent = `$${revenue}`;
+
+  document.getElementById("dashboard-orders")
+  .textContent = orders.length;
+
+  document.getElementById("dashboard-clients")
+  .textContent = clients.length;
+
+  document.getElementById("dashboard-products")
+  .textContent = products.length;
+
+  // RECENT ORDERS
+
+  const recentOrders =
+  document.getElementById("recent-orders");
+
+  recentOrders.innerHTML = "";
+
+  orders.slice(-5).reverse().forEach(order => {
+
+    recentOrders.innerHTML += `
+
+      <div class="recent-order">
+
+        <div class="order-client">
+
+          <div class="order-avatar">
+
+            ${order.customer.charAt(0)}
+
+          </div>
+
+          <div>
+
+            <strong>${order.customer}</strong>
+
+            <p>${order.date}</p>
+
+          </div>
+
+        </div>
+
+        <div class="order-price">
+
+          $${order.total}
+
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+  // BEST PRODUCTS
+
+  const bestProducts =
+  document.getElementById("best-products");
+
+  bestProducts.innerHTML = "";
+
+  const featuredProducts =
+  products.filter(product =>
+    product.featured
+  );
+
+  featuredProducts.slice(0,5).forEach(product => {
+
+    bestProducts.innerHTML += `
+
+      <div class="best-product">
+
+        <img src="${product.image}">
+
+        <div>
+
+          <strong>${product.name}</strong>
+
+          <p>$${product.price}</p>
+
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+  // ACTIVITIES
+
+  const activities =
+  document.getElementById("recent-activities");
+
+  activities.innerHTML = "";
+
+  orders.slice(-5).reverse().forEach(order => {
+
+    activities.innerHTML += `
+
+      <div class="activity-item">
+
+        <div class="activity-icon">
+
+          <i class="fa-solid fa-cart-shopping"></i>
+
+        </div>
+
+        <div class="activity-content">
+
+          <p>
+
+            Nouvelle commande de
+            <strong>${order.customer}</strong>
+
+          </p>
+
+          <span>${order.date}</span>
+
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+renderDashboard();
+
+
+// =========================
+// QUICK ACTIONS
+// =========================
+
+document.getElementById("quick-add-product")
+.addEventListener("click", () => {
+
+  window.scrollTo({
+    top:700,
+    behavior:"smooth"
+  });
+
+});
+
+document.getElementById("quick-orders")
+.addEventListener("click", () => {
+
+  document.querySelector(".orders-section")
+  .scrollIntoView({
+    behavior:"smooth"
+  });
+
+});
+
+document.getElementById("quick-clients")
+.addEventListener("click", () => {
+
+  document.querySelector(".clients-section")
+  .scrollIntoView({
+    behavior:"smooth"
+  });
+
+});
+
 
 // AUTO LOGIN
 
