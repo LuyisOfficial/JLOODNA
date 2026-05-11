@@ -35,7 +35,41 @@ loginBtn.addEventListener("click", () => {
   }
 
 });
+/* ========================= */
+/* SIDEBAR MOBILE */
+/* ========================= */
 
+const sidebar = document.querySelector(".sidebar");
+const menuToggle = document.querySelector(".menu-toggle");
+const closeSidebar = document.querySelector(".close-sidebar");
+
+menuToggle.addEventListener("click", () => {
+  sidebar.classList.add("open");
+});
+
+closeSidebar.addEventListener("click", () => {
+  sidebar.classList.remove("open");
+});
+
+/* ========================= */
+/* DROPDOWN MENU */
+/* ========================= */
+
+const dropdownBtns = document.querySelectorAll(".menu-btn");
+
+dropdownBtns.forEach(btn => {
+
+  btn.addEventListener("click", () => {
+
+    const submenu = btn.nextElementSibling;
+
+    submenu.classList.toggle("active");
+
+    btn.classList.toggle("active");
+
+  });
+
+});
 
 // ==========================
 // SHOW ADMIN PANEL
