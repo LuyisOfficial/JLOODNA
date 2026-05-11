@@ -1,161 +1,153 @@
-// ============================
-// CART PRODUCTS
-// ============================
+// ===============================
+// EXEMPLE DE PRODUITS AJOUTÉS
+// ===============================
 
-let cart = [
+// Seuls les produits choisis par le client apparaissent.
+// Chaque produit doit être ajouté dans localStorage depuis shop.html
 
-  {
-    id:1,
-    name:"Samsung Galaxy S24",
-    price:899,
-    quantity:1,
-    image:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1000&auto=format&fit=crop"
-  },
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  {
-    id:2,
-    name:"Wireless Headphones",
-    price:120,
-    quantity:2,
-    image:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop"
-  }
+const cartItems = document.getElementById("cart-items");
+const subtotalEl = document.getElementById("subtotal");
+const totalEl = document.getElementById("total");
+const emptyCart = document.getElementById("empty-cart");
+const checkoutBtn = document.getElementById("checkout-btn");
 
-];
+const SHIPPING = 15;
 
-// ============================
-// HTML ELEMENTS
-// ============================
 
-const cartItems =
-document.getElementById("cart-items");
-
-const subtotalElement =
-document.getElementById("subtotal");
-
-const totalElement =
-document.getElementById("total");
-
-const shippingElement =
-document.getElementById("shipping");
-
-const shippingCost = 15;
-
-// ============================
-// DISPLAY CART
-// ============================
+// ===============================
+// AFFICHER PANIER
+// ===============================
 
 function renderCart(){
 
   cartItems.innerHTML = "";
 
+  if(cart.length === 0){
+
+    emptyCart.style.display = "block";
+    subtotalEl.textContent = "$0";
+    totalEl.textContent = "$0";
+
+    return;
+  }
+
+  emptyCart.style.display = "none";
+
   let subtotal = 0;
 
-  cart.forEach(product => {
+  cart.forEach((product, index) => {
 
-    subtotal +=
-    product.price * product.quantity;
+    subtotal += product.price * product.quantity;
 
-    const item =
-    document.createElement("div");
-
+    const item = document.createElement("div");
     item.classList.add("cart-item");
 
     item.innerHTML = `
 
-      <img src="${product.image}"
-      class="cart-image">
+      <div class="cart-left">
 
-      <div class="cart-info">
+        <img src="${product.image}" alt="${product.name}">
 
-        <h3>${product.name}</h3>
+        <div class="product-info">
+          <h3>${product.name}</h3>
+          <p>$${product.price}</p>
 
-        <div class="cart-price">
-          $${product.price}
-        </div>
+          <div class="quantity-box">
 
-        <div class="quantity-controls">
+            <button class="quantity-btn" onclick="changeQty(${index}, -1)">-</button>
 
-          <button class="qty-btn"
-          onclick="changeQty(${product.id}, -1)">
-            -
-          </button>
+            <span>${product.quantity}</span>
 
-          <span class="qty-number">
-            ${product.quantity}
-          </span>
+            <button class="quantity-btn" onclick="changeQty(${index}, 1)">+</button>
 
-          <button class="qty-btn"
-          onclick="changeQty(${product.id}, 1)">
-            +
-          </button>
+          </div>
 
         </div>
 
       </div>
 
-      <button class="delete-btn"
-      onclick="removeItem(${product.id})">
-
-        <i class="fa-solid fa-trash"></i>
-
+      <button class="remove-btn" onclick="removeItem(${index})">
+        Retire
       </button>
 
     `;
 
     cartItems.appendChild(item);
-
   });
 
-  subtotalElement.innerText =
-  "$" + subtotal;
-
-  totalElement.innerText =
-  "$" + (subtotal + shippingCost);
-
+  subtotalEl.textContent = `$${subtotal}`;
+  totalEl.textContent = `$${subtotal + SHIPPING}`;
 }
 
-// ============================
-// CHANGE QUANTITY
-// ============================
 
-function changeQty(id, action){
+// ===============================
+// CHANGER QUANTITÉ
+// ===============================
 
-  cart = cart.map(product => {
+function changeQty(index, change){
 
-    if(product.id === id){
+  cart[index].quantity += change;
 
-      product.quantity += action;
+  if(cart[index].quantity <= 0){
+    cart.splice(index, 1);
+  }
 
-      if(product.quantity < 1){
-        product.quantity = 1;
-      }
+  saveCart();
+}
 
-    }
 
-    return product;
+// ===============================
+// RETIRER PRODUIT
+// ===============================
 
-  });
+function removeItem(index){
 
+  cart.splice(index, 1);
+  saveCart();
+}
+
+
+// ===============================
+// SAUVEGARDER
+// ===============================
+
+function saveCart(){
+
+  localStorage.setItem("cart", JSON.stringify(cart));
   renderCart();
-
 }
 
-// ============================
-// REMOVE PRODUCT
-// ============================
 
-function removeItem(id){
+// ===============================
+// CHECKOUT
+// ===============================
 
-  cart = cart.filter(product =>
-    product.id !== id
-  );
+checkoutBtn.addEventListener("click", () => {
 
-  renderCart();
+  if(cart.length === 0){
+    alert("Panyen ou vid.");
+    return;
+  }
 
-}
+  // Vérifier connexion client
+  const user = JSON.parse(localStorage.getItem("jloodnaUser"));
 
-// ============================
-// INIT
-// ============================
+  if(!user){
+
+    alert("Ou dwe kreye kont oswa konekte avan.");
+
+    window.location.href = "login.html";
+    return;
+  }
+
+  // Sauvegarder commande
+  localStorage.setItem("checkoutCart", JSON.stringify(cart));
+
+  // Redirection checkout
+  window.location.href = "checkout.html";
+});
+
 
 renderCart();
