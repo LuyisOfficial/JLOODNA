@@ -81,3 +81,36 @@ ANTI CART ABANDONMENT
 4. Paiement sécurisé visible.
 
 ============================ */
+
+let clients =
+JSON.parse(localStorage.getItem("jloodnaClients"))
+|| [];
+
+const currentUser =
+JSON.parse(localStorage.getItem("jloodnaUser"));
+
+const clientIndex =
+clients.findIndex(client =>
+  client.email === currentUser.email
+);
+
+if(clientIndex !== -1){
+
+  clients[clientIndex].orders += 1;
+
+  clients[clientIndex].totalSpent += total + 15;
+
+  // VIP automatique
+
+  if(clients[clientIndex].totalSpent >= 1000){
+
+    clients[clientIndex].status = "vip";
+
+  }
+
+  localStorage.setItem(
+    "jloodnaClients",
+    JSON.stringify(clients)
+  );
+
+}
