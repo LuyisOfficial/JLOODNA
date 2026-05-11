@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Suivi de Commande | Jloodna Global Trading</title>
+
+  <link rel="stylesheet" href="tracking.css"/>
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="logo">
+      <span>JLOODNA</span>
+    </div>
+
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#">Boutique</a>
+      <a href="#">Support</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="tracking-container">
+
+    <!-- ORDER HEADER -->
+    <section class="order-header card">
+      <div>
+        <h1>Suivi de Commande</h1>
+
+        <h2>#JLD-8829</h2>
+
+        <p>Date de commande : <strong>08 Mai 2026</strong></p>
+      </div>
+
+      <div class="status-badge shipping">
+        En cours de livraison
+      </div>
+    </section>
+
+    <!-- STEPPER -->
+    <section class="stepper-section card">
+
+      <div class="step active">
+        <div class="step-icon">✅</div>
+        <p>Commande confirmée</p>
+      </div>
+
+      <div class="line active"></div>
+
+      <div class="step active">
+        <div class="step-icon">📦</div>
+        <p>Préparation</p>
+      </div>
+
+      <div class="line active"></div>
+
+      <div class="step active">
+        <div class="step-icon">✈️</div>
+        <p>Expédié</p>
+      </div>
+
+      <div class="line active"></div>
+
+      <div class="step current">
+        <div class="step-icon">🛵</div>
+        <p>Livraison locale</p>
+      </div>
+
+      <div class="line"></div>
+
+      <div class="step">
+        <div class="step-icon">🏠</div>
+        <p>Livré</p>
+      </div>
+
+    </section>
+
+    <!-- SHIPPING DETAILS -->
+    <section class="shipping-details card">
+
+      <div class="detail-box">
+        <h3>Informations de livraison</h3>
+
+        <p><strong>Client :</strong> Jean Pierre</p>
+
+        <p>
+          <strong>Adresse :</strong><br>
+          Delmas 75,<br>
+          Port-au-Prince,<br>
+          Haïti
+        </p>
+
+        <p><strong>Téléphone :</strong> +509 33 44 55 66</p>
+      </div>
+
+      <div class="detail-box">
+        <h3>Expédition</h3>
+
+        <p><strong>Méthode :</strong> Livraison Standard Jloodna</p>
+
+        <p><strong>Transporteur :</strong> DHL Express</p>
+
+        <p>
+          <strong>Tracking :</strong>
+          <a href="#" class="tracking-link">
+            DHL-9988227766
+          </a>
+        </p>
+      </div>
+
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="timeline-section card">
+
+      <div class="section-title">
+        <h3>Historique du colis</h3>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+            <h4>Lundi 10 Mai, 14:00</h4>
+            <p>Colis arrivé au centre de tri de Port-au-Prince.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+            <h4>Dimanche 09 Mai, 09:00</h4>
+            <p>Le colis a quitté l'entrepôt international.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+            <h4>Samedi 08 Mai, 18:30</h4>
+            <p>Paiement validé et commande préparée.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ORDER SUMMARY -->
+    <section class="order-summary card">
+
+      <div class="section-title">
+        <h3>Résumé de la commande</h3>
+      </div>
+
+      <div class="product-item">
+
+        <img
+          src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=500"
+          alt="Produit">
+
+        <div class="product-info">
+          <h4>T-Shirt Premium Jloodna</h4>
+          <p>Quantité : 2</p>
+        </div>
+
+        <div class="product-price">
+          $40
+        </div>
+
+      </div>
+
+      <div class="product-item">
+
+        <img
+          src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=500"
+          alt="Produit">
+
+        <div class="product-info">
+          <h4>Sneakers Fashion</h4>
+          <p>Quantité : 1</p>
+        </div>
+
+        <div class="product-price">
+          $75
+        </div>
+
+      </div>
+
+      <div class="summary-total">
+
+        <div>
+          <span>Sous-total</span>
+          <strong>$115</strong>
+        </div>
+
+        <div>
+          <span>Livraison</span>
+          <strong>$10</strong>
+        </div>
+
+        <div class="grand-total">
+          <span>Total</span>
+          <strong>$125</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ACTIONS -->
+    <section class="actions-section">
+
+      <button class="action-btn whatsapp-btn">
+        <i class="fa-brands fa-whatsapp"></i>
+        Besoin d'aide ?
+      </button>
+
+      <button class="action-btn edit-btn">
+        <i class="fa-solid fa-location-dot"></i>
+        Modifier l'adresse
+      </button>
+
+      <button class="action-btn print-btn" id="printInvoice">
+        <i class="fa-solid fa-print"></i>
+        Imprimer la facture
+      </button>
+
+    </section>
+
+  </main>
+
+  <script src="tracking.js"></script>
+
+</body>
+  </html>
