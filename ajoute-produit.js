@@ -517,3 +517,261 @@ function filterOrders(){
   });
 
     }
+
+// =========================
+// CLIENTS DATABASE
+// =========================
+
+let clients =
+JSON.parse(localStorage.getItem("jloodnaClients"))
+|| [];
+
+
+// =========================
+// CLIENT RENDER
+// =========================
+
+function renderClients(){
+
+  const tbody =
+  document.getElementById("clients-table-body");
+
+  tbody.innerHTML = "";
+
+  let active = 0;
+  let vip = 0;
+
+  clients.forEach((client,index) => {
+
+    if(client.status === "active"){
+      active++;
+    }
+
+    if(client.status === "vip"){
+      vip++;
+    }
+
+    tbody.innerHTML += `
+
+      <tr>
+
+        <td>
+
+          <div class="client-info">
+
+            <div class="client-avatar">
+
+              ${client.name.charAt(0)}
+
+            </div>
+
+            <div>
+
+              <strong>${client.name}</strong>
+
+            </div>
+
+          </div>
+
+        </td>
+
+        <td>${client.email}</td>
+
+        <td>${client.phone}</td>
+
+        <td>${client.orders}</td>
+
+        <td>$${client.totalSpent}</td>
+
+        <td>
+
+          <span class="client-status status-${client.status}">
+
+            ${client.status}
+
+          </span>
+
+        </td>
+
+        <td>${client.registerDate}</td>
+
+        <td>
+
+          <div class="client-actions">
+
+            <button
+            class="view-client-btn"
+            onclick="viewClient(${index})">
+
+              Voir
+
+            </button>
+
+            <button
+            class="block-client-btn"
+            onclick="toggleClientStatus(${index})">
+
+              ${client.status === "blocked"
+              ? "Débloquer"
+              : "Bloquer"}
+
+            </button>
+
+            <button
+            class="delete-client-btn"
+            onclick="deleteClient(${index})">
+
+              Supprimer
+
+            </button>
+
+          </div>
+
+        </td>
+
+      </tr>
+
+    `;
+
+  });
+
+  // STATS
+
+  document.getElementById("total-clients")
+  .textContent = clients.length;
+
+  document.getElementById("active-clients")
+  .textContent = active;
+
+  document.getElementById("vip-clients")
+  .textContent = vip;
+
+}
+
+renderClients();
+
+
+// =========================
+// VIEW CLIENT
+// =========================
+
+function viewClient(index){
+
+  const client = clients[index];
+
+  alert(
+
+`
+Client : ${client.name}
+
+Email : ${client.email}
+
+Téléphone : ${client.phone}
+
+Commandes : ${client.orders}
+
+Total Dépensé : $${client.totalSpent}
+
+Statut : ${client.status}
+
+Date : ${client.registerDate}
+`
+
+  );
+
+}
+
+
+// =========================
+// BLOCK / UNBLOCK
+// =========================
+
+function toggleClientStatus(index){
+
+  if(clients[index].status === "blocked"){
+
+    clients[index].status = "active";
+
+  }else{
+
+    clients[index].status = "blocked";
+
+  }
+
+  localStorage.setItem(
+    "jloodnaClients",
+    JSON.stringify(clients)
+  );
+
+  renderClients();
+
+}
+
+
+// =========================
+// DELETE CLIENT
+// =========================
+
+function deleteClient(index){
+
+  if(confirm("Supprimer client ?")){
+
+    clients.splice(index,1);
+
+    localStorage.setItem(
+      "jloodnaClients",
+      JSON.stringify(clients)
+    );
+
+    renderClients();
+
+  }
+
+}
+
+
+// =========================
+// SEARCH FILTER
+// =========================
+
+document.getElementById("search-client")
+.addEventListener("input", filterClients);
+
+document.getElementById("client-filter")
+.addEventListener("change", filterClients);
+
+function filterClients(){
+
+  const search =
+  document.getElementById("search-client")
+  .value.toLowerCase();
+
+  const filter =
+  document.getElementById("client-filter")
+  .value;
+
+  const rows =
+  document.querySelectorAll(
+    "#clients-table-body tr"
+  );
+
+  rows.forEach(row => {
+
+    const text =
+    row.innerText.toLowerCase();
+
+    const matchSearch =
+    text.includes(search);
+
+    const matchFilter =
+    filter === "all" ||
+    text.includes(filter);
+
+    row.style.display =
+    matchSearch && matchFilter
+    ? ""
+    : "none";
+
+  });
+
+  }
