@@ -358,6 +358,120 @@
   </div>
 
 </section>
+
+
+      <!-- ========================= -->
+<!-- CLIENTS -->
+<!-- ========================= -->
+
+<section class="clients-section">
+
+  <div class="clients-header">
+
+    <h2>
+      <i class="fa-solid fa-users"></i>
+      Gestion des Clients
+    </h2>
+
+    <div class="client-stats">
+
+      <div class="client-stat-card">
+
+        <span id="total-clients">
+          0
+        </span>
+
+        <p>Total Clients</p>
+
+      </div>
+
+      <div class="client-stat-card">
+
+        <span id="active-clients">
+          0
+        </span>
+
+        <p>Clients Actifs</p>
+
+      </div>
+
+      <div class="client-stat-card">
+
+        <span id="vip-clients">
+          0
+        </span>
+
+        <p>Clients VIP</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FILTER -->
+
+  <div class="clients-filter">
+
+    <input type="text"
+    id="search-client"
+    placeholder="Recherche client...">
+
+    <select id="client-filter">
+
+      <option value="all">
+        Tous les clients
+      </option>
+
+      <option value="vip">
+        VIP
+      </option>
+
+      <option value="active">
+        Actifs
+      </option>
+
+      <option value="blocked">
+        Bloqués
+      </option>
+
+    </select>
+
+  </div>
+
+  <!-- TABLE -->
+
+  <div class="clients-table-container">
+
+    <table class="clients-table">
+
+      <thead>
+
+        <tr>
+
+          <th>Client</th>
+          <th>Email</th>
+          <th>Téléphone</th>
+          <th>Commandes</th>
+          <th>Total Dépensé</th>
+          <th>Statut</th>
+          <th>Date Inscription</th>
+          <th>Actions</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody id="clients-table-body">
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</section>
+
       
     </main>
 
