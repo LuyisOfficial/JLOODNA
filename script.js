@@ -1,3 +1,28 @@
+const products =
+JSON.parse(localStorage.getItem("jloodnaProducts"))
+|| [];
+
+const featured =
+products.filter(product => product.featured);
+
+featured.forEach(product => {
+
+  bestSellerContainer.innerHTML += `
+
+    <div class="product-card">
+
+      <img src="${product.image}">
+
+      <h3>${product.name}</h3>
+
+      <p>$${product.price}</p>
+
+    </div>
+
+  `;
+
+});
+
 // =========================
 // MOBILE MENU
 // =========================
