@@ -1,218 +1,233 @@
-// =====================================
-// PRODUCT ADMIN SYSTEM
-// =====================================
+// ==========================
+// ADMIN SECURITY
+// ==========================
 
-const form =
-document.getElementById("product-form");
+const ADMIN_EMAIL = "jloodna@gmail.com";
+const ADMIN_PASSWORD = "@JLoodna20021996";
 
-const imageInput =
-document.getElementById("product-image");
+const loginBtn = document.getElementById("login-btn");
 
-const imagePreview =
-document.getElementById("image-preview");
+loginBtn.addEventListener("click", () => {
 
-const successMessage =
-document.getElementById("success-message");
+  const email =
+  document.getElementById("admin-email").value;
 
-// =====================================
-// IMAGE PREVIEW
-// =====================================
+  const password =
+  document.getElementById("admin-password").value;
 
-imageInput.addEventListener("change", () => {
+  if(
+    email === ADMIN_EMAIL &&
+    password === ADMIN_PASSWORD
+  ){
 
-  const file =
-  imageInput.files[0];
+    localStorage.setItem(
+      "jloodnaAdmin",
+      "true"
+    );
 
-  if(file){
+    showAdminPanel();
 
-    const reader =
-    new FileReader();
+  }else{
 
-    reader.onload = function(e){
-
-      imagePreview.innerHTML = `
-        <img src="${e.target.result}">
-      `;
-
-    };
-
-    reader.readAsDataURL(file);
+    document.getElementById("login-error")
+    .style.display = "block";
 
   }
 
 });
 
-// =====================================
-// FORM VALIDATION
-// =====================================
+
+// ==========================
+// SHOW ADMIN PANEL
+// ==========================
+
+function showAdminPanel(){
+
+  document.getElementById("admin-login")
+  .style.display = "none";
+
+  document.getElementById("admin-panel")
+  .classList.remove("hidden");
+
+}
+
+
+// AUTO LOGIN
+
+if(localStorage.getItem("jloodnaAdmin") === "true"){
+  showAdminPanel();
+}
+
+
+// ==========================
+// LOGOUT
+// ==========================
+
+document.getElementById("logout-btn")
+.addEventListener("click", () => {
+
+  localStorage.removeItem("jloodnaAdmin");
+
+  location.reload();
+
+});
+
+
+// ==========================
+// IMAGE PREVIEW
+// ==========================
+
+const imageInput =
+document.getElementById("product-image");
+
+imageInput.addEventListener("input", () => {
+
+  const image =
+  imageInput.value;
+
+  document.getElementById("image-preview")
+  .innerHTML = `
+    <img src="${image}">
+  `;
+
+});
+
+
+// ==========================
+// PRODUCTS DATABASE
+// ==========================
+
+let products =
+JSON.parse(localStorage.getItem("jloodnaProducts"))
+|| [];
+
+
+// ==========================
+// FORM SUBMIT
+// ==========================
+
+const form =
+document.getElementById("product-form");
 
 form.addEventListener("submit", (e) => {
 
   e.preventDefault();
 
-  let valid = true;
+  const product = {
 
-  const fields = [
+    id: Date.now(),
 
-    "product-name",
-    "product-price",
-    "product-category",
-    "product-description"
+    name:
+    document.getElementById("product-name").value,
 
-  ];
+    price:
+    document.getElementById("product-price").value,
 
-  fields.forEach(id => {
+    category:
+    document.getElementById("product-category").value,
 
-    const input =
-    document.getElementById(id);
+    image:
+    document.getElementById("product-image").value,
 
-    const error =
-    input.parentElement.querySelector(".error");
+    description:
+    document.getElementById("product-description").value,
 
-    if(input.value.trim() === ""){
+    featured:
+    document.getElementById("featured-product").checked
 
-      error.style.display = "block";
+  };
 
-      input.style.borderColor = "red";
+  // SAVE PRODUCT
 
-      valid = false;
+  products.push(product);
 
-    }
+  localStorage.setItem(
+    "jloodnaProducts",
+    JSON.stringify(products)
+  );
 
-    else{
+  // SUCCESS MESSAGE
 
-      error.style.display = "none";
+  document.getElementById("success-message")
+  .style.display = "block";
 
-      input.style.borderColor = "#000";
+  form.reset();
 
-    }
+  document.getElementById("image-preview")
+  .innerHTML = `
+    <p>Preview pwodwi</p>
+  `;
 
-  });
-
-  // IMAGE VALIDATION
-
-  const imageError =
-  imageInput.parentElement
-  .querySelector(".error");
-
-  if(imageInput.files.length === 0){
-
-    imageError.style.display =
-    "block";
-
-    valid = false;
-
-  }
-
-  else{
-
-    imageError.style.display =
-    "none";
-
-  }
-
-  // SUCCESS
-
-  if(valid){
-
-    successMessage.style.display =
-    "block";
-
-    // =====================================
-    // PRODUCT OBJECT
-    // =====================================
-
-    const productData = {
-
-      name:
-      document.getElementById("product-name").value,
-
-      price:
-      document.getElementById("product-price").value,
-
-      category:
-      document.getElementById("product-category").value,
-
-      description:
-      document.getElementById("product-description").value,
-
-      featured:
-      document.getElementById("featured-product").checked,
-
-      image:
-      imageInput.files[0].name
-
-    };
-
-    console.log(productData);
-
-    // =====================================
-    // BACK-END API EXAMPLE
-    // =====================================
-
-    /*
-      fetch("/api/products", {
-
-        method: "POST",
-
-        headers: {
-          "Content-Type": "application/json"
-        },
-
-        body: JSON.stringify(productData)
-
-      })
-
-    */
-
-    // RESET FORM
-
-    form.reset();
-
-    imagePreview.innerHTML = `
-      <p>
-        Preview pwodwi a ap parèt isit la
-      </p>
-    `;
-
-  }
+  renderProducts();
 
 });
 
-/* =====================================
 
-DATABASE STRUCTURE (MySQL)
+// ==========================
+// RENDER PRODUCTS
+// ==========================
 
-TABLE: products
+function renderProducts(){
 
-id
-name
-price
-category
-description
-image
-featured
-created_at
+  const container =
+  document.getElementById("products-container");
 
-===================================== */
+  container.innerHTML = "";
 
-/* =====================================
+  products.forEach((product,index) => {
 
-FRONTEND CONNECTION
+    container.innerHTML += `
 
-HOME PAGE:
-SELECT * FROM products
-WHERE featured = true
+      <div class="product-card">
 
-SHOP PAGE:
-SELECT * FROM products
+        <img src="${product.image}">
 
-FILTER:
-SELECT * FROM products
-WHERE category = 'Teknoloji'
+        <div class="product-content">
 
-SEARCH:
-SELECT * FROM products
-WHERE name LIKE '%iphone%'
+          <h3>${product.name}</h3>
 
-===================================== */
+          <p>$${product.price}</p>
+
+          <p>${product.category}</p>
+
+          <button
+          class="delete-btn"
+          onclick="deleteProduct(${index})">
+
+            Supprime
+
+          </button>
+
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+renderProducts();
+
+
+// ==========================
+// DELETE PRODUCT
+// ==========================
+
+function deleteProduct(index){
+
+  if(confirm("Supprimer produit ?")){
+
+    products.splice(index,1);
+
+    localStorage.setItem(
+      "jloodnaProducts",
+      JSON.stringify(products)
+    );
+
+    renderProducts();
+
+  }
+
+}
