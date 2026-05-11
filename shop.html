@@ -206,7 +206,36 @@
     </div>
 
   </footer>
+<script>
+  const products =
+JSON.parse(localStorage.getItem("jloodnaProducts"))
+|| [];
 
+const shopContainer =
+document.getElementById("shop-products");
+
+products.forEach(product => {
+
+  shopContainer.innerHTML += `
+
+    <div class="product-card">
+
+      <img src="${product.image}">
+
+      <h3>${product.name}</h3>
+
+      <p>$${product.price}</p>
+
+      <button onclick='addToCart(${JSON.stringify(product)})'>
+        Ajouter au panier
+      </button>
+
+    </div>
+
+  `;
+
+});
+</script>
   <script src="shop.js"></script>
 
 </body>
