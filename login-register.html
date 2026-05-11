@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>
+    Connexion | Inscription - JLOODNA
+  </title>
+
+  <meta name="description"
+  content="Créez votre compte sécurisé JLOODNA Global Trading pour commander facilement vos produits en ligne.">
+
+  <link rel="stylesheet"
+  href="login-register.css">
+
+  <!-- FONT AWESOME -->
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+<body>
+
+  <!-- BACKGROUND -->
+
+  <div class="background-overlay"></div>
+
+  <!-- AUTH CONTAINER -->
+
+  <section class="auth-section">
+
+    <!-- LEFT -->
+
+    <div class="auth-left">
+
+      <div class="brand">
+
+        <h1>JLOODNA</h1>
+
+        <p>
+          Global Trading Boutique
+        </p>
+
+      </div>
+
+      <div class="security-box">
+
+        <div class="security-item">
+
+          <i class="fa-solid fa-shield-halved"></i>
+
+          <div>
+
+            <h3>
+              Sécurité Avancée
+            </h3>
+
+            <p>
+              Vos données sont protégées et sécurisées.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="security-item">
+
+          <i class="fa-solid fa-lock"></i>
+
+          <div>
+
+            <h3>
+              Confidentialité
+            </h3>
+
+            <p>
+              JLOODNA ne partage jamais vos informations privées.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="security-item">
+
+          <i class="fa-solid fa-credit-card"></i>
+
+          <div>
+
+            <h3>
+              Paiement Sécurisé
+            </h3>
+
+            <p>
+              Transactions protégées et fiables.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="auth-right">
+
+      <!-- TOP -->
+
+      <div class="auth-top">
+
+        <button class="tab-btn active"
+        id="login-tab">
+
+          Connexion
+
+        </button>
+
+        <button class="tab-btn"
+        id="register-tab">
+
+          Inscription
+
+        </button>
+
+      </div>
+
+      <!-- LOGIN -->
+
+      <form id="login-form"
+      class="auth-form">
+
+        <h2>
+          Connexion Client
+        </h2>
+
+        <div class="input-group">
+
+          <i class="fa-solid fa-envelope"></i>
+
+          <input type="email"
+          id="login-email"
+          placeholder="Votre email"
+          required>
+
+        </div>
+
+        <div class="input-group">
+
+          <i class="fa-solid fa-lock"></i>
+
+          <input type="password"
+          id="login-password"
+          placeholder="Mot de passe"
+          required>
+
+        </div>
+
+        <div class="remember-box">
+
+          <label>
+
+            <input type="checkbox">
+
+            Se souvenir de moi
+
+          </label>
+
+          <a href="#">
+            Mot de passe oublié ?
+          </a>
+
+        </div>
+
+        <button type="submit"
+        class="auth-btn">
+
+          Se connecter
+
+        </button>
+
+      </form>
+
+      <!-- REGISTER -->
+
+      <form id="register-form"
+      class="auth-form hidden">
+
+        <h2>
+          Créer un compte
+        </h2>
+
+        <div class="input-group">
+
+          <i class="fa-solid fa-user"></i>
+
+          <input type="text"
+          id="register-name"
+          placeholder="Nom complet"
+          required>
+
+        </div>
+
+        <div class="input-group">
+
+          <i class="fa-solid fa-envelope"></i>
+
+          <input type="email"
+          id="register-email"
+          placeholder="Adresse email"
+          required>
+
+        </div>
+
+        <div class="input-group">
+
+          <i class="fa-solid fa-phone"></i>
+
+          <input type="tel"
+          id="register-phone"
+          placeholder="Téléphone"
+          required>
+
+        </div>
+
+        <div class="input-group">
+
+          <i class="fa-solid fa-location-dot"></i>
+
+          <input type="text"
+          id="register-address"
+          placeholder="Adresse Livraison"
+          required>
+
+        </div>
+
+        <div class="input-group">
+
+          <i class="fa-solid fa-lock"></i>
+
+          <input type="password"
+          id="register-password"
+          placeholder="Créer mot de passe"
+          required>
+
+        </div>
+
+        <div class="input-group">
+
+          <i class="fa-solid fa-lock"></i>
+
+          <input type="password"
+          id="confirm-password"
+          placeholder="Confirmer mot de passe"
+          required>
+
+        </div>
+
+        <!-- PRIVACY -->
+
+        <div class="privacy-box">
+
+          <label>
+
+            <input type="checkbox"
+            id="privacy-check"
+            required>
+
+            J'accepte la politique de confidentialité
+            et les conditions d'utilisation.
+
+          </label>
+
+        </div>
+
+        <button type="submit"
+        class="auth-btn">
+
+          Créer mon compte
+
+        </button>
+
+      </form>
+
+      <!-- SUCCESS -->
+
+      <div class="success-message"
+      id="success-message">
+
+        Compte créé avec succès.
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script src="login-register.js"></script>
+
+</body>
+          </html>
