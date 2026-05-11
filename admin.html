@@ -1,436 +1,613 @@
 <!DOCTYPE html>
-<html lang="ht">
+<html lang="fr">
 <head>
+
   <meta charset="UTF-8">
 
-  <meta name="viewport"
+  <meta
+  name="viewport"
   content="width=device-width, initial-scale=1.0">
 
-  <title>JLOODNA ADMIN | Ajoute Pwodwi</title>
+  <meta
+  http-equiv="X-UA-Compatible"
+  content="IE=edge">
 
-  <link rel="stylesheet"
-  href="admin.css">
+  <title>
+    JLOODNA ADMIN | Dashboard
+  </title>
+
+  <!-- SEO -->
+
+  <meta
+  name="description"
+  content="Dashboard administrateur sécurisé Jloodna Global Trading">
+
+  <!-- CSS -->
+
+  <link
+  rel="stylesheet"
+  href="./admin.css">
 
   <!-- FONT AWESOME -->
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
+
 <body>
 
-  <!-- LOGIN SECURITY -->
+<!-- ========================= -->
+<!-- LOGIN PAGE -->
+<!-- ========================= -->
 
-  <div class="admin-login" id="admin-login">
+<section
+class="admin-login"
+id="admin-login">
 
-    <div class="login-box">
+  <div class="login-box">
 
-      <h2>JLOODNA ADMIN</h2>
+    <div class="login-logo">
 
-      <p>Konekte pou ajoute pwodwi</p>
-
-      <input type="email"
-      id="admin-email"
-      placeholder="Email admin">
-
-      <input type="password"
-      id="admin-password"
-      placeholder="Mot de passe">
-
-      <button id="login-btn">
-        Konekte
-      </button>
-
-      <div class="login-error"
-      id="login-error">
-
-        Email ou mot de passe pa bon.
-
-      </div>
+      <img
+      src="./logo.png"
+      alt="Jloodna Logo">
 
     </div>
 
-  </div>
+    <h2>
+      Administration JLOODNA
+    </h2>
 
-  <!-- ADMIN PANEL -->
+    <p>
+      Connectez-vous pour accéder
+      au tableau de bord.
+    </p>
 
-  <div id="admin-panel"
-  class="hidden">
-<!-- ========================= -->
-<!-- TOP BAR -->
-<!-- ========================= -->
+    <div class="form-group">
 
-<div class="top-bar">
+      <input
+      type="email"
+      id="admin-email"
+      autocomplete="email"
+      placeholder="Email administrateur"
+      required>
 
-  <div class="top-left">
+    </div>
 
-    <button class="menu-toggle">
-      ☰
+    <div class="form-group">
+
+      <input
+      type="password"
+      id="admin-password"
+      autocomplete="current-password"
+      placeholder="Mot de passe"
+      required>
+
+    </div>
+
+    <button id="login-btn">
+
+      <i class="fa-solid fa-lock"></i>
+
+      Connexion Sécurisée
+
     </button>
 
-    <h1>Dashboard Admin</h1>
+    <div
+    class="login-error"
+    id="login-error">
 
-  </div>
+      Email ou mot de passe incorrect.
 
-  <div class="admin-profile">
-
-    <div class="admin-avatar">
-      A
-    </div>
-
-    <div>
-      <strong>Admin</strong>
-      <p>Jloodna Global Trading</p>
     </div>
 
   </div>
 
-</div>
+</section>
 
 <!-- ========================= -->
-<!-- SIDEBAR -->
+<!-- ADMIN PANEL -->
 <!-- ========================= -->
 
-<div class="sidebar close">
+<div
+id="admin-panel"
+class="hidden">
 
-  <div class="sidebar-header">
+  <!-- ========================= -->
+  <!-- SIDEBAR -->
+  <!-- ========================= -->
 
-    <div class="logo">
-      <img src="./logo.png" alt="Jloodna Logo">
-    </div>
+  <aside class="sidebar close">
 
-    <div class="close-sidebar">
-      ✕
-    </div>
+    <!-- HEADER -->
 
-  </div>
+    <div class="sidebar-header">
 
-  <div class="sidebar-menu">
+      <div class="logo">
 
-    <!-- DASHBOARD -->
+        <img
+        src="./logo.png"
+        alt="Jloodna Logo">
 
-    <div class="menu-item">
+      </div>
 
-      <button class="menu-btn active">
+      <button
+      class="close-sidebar"
+      aria-label="Fermer menu">
 
-        <span>📊 Dashboard</span>
-
-        ▼
+        <i class="fa-solid fa-xmark"></i>
 
       </button>
 
-      <div class="sub-menu active">
-
-        <a href="#">Vue Générale</a>
-
-        <a href="#">Statistiques</a>
-
-        <a href="#">Activités</a>
-
-      </div>
-
     </div>
 
-    <!-- PRODUCTS -->
+    <!-- MENU -->
 
-    <div class="menu-item">
+    <nav class="sidebar-menu">
 
-      <button class="menu-btn">
+      <!-- DASHBOARD -->
 
-        <span>🛒 Produits</span>
+      <div class="menu-item">
 
-        ▼
+        <button
+        class="menu-btn active">
 
-      </button>
+          <span>
 
-      <div class="sub-menu">
+            <i class="fa-solid fa-chart-line"></i>
 
-        <a href="#">Tous les Produits</a>
+            Dashboard
 
-        <a href="#">Ajouter Produit</a>
+          </span>
 
-        <a href="#">Catégories</a>
+          <i class="fa-solid fa-chevron-down"></i>
 
-      </div>
-
-    </div>
-
-    <!-- ORDERS -->
-
-    <div class="menu-item">
-
-      <button class="menu-btn">
-
-        <span>📦 Commandes</span>
-
-        ▼
-
-      </button>
-
-      <div class="sub-menu">
-
-        <a href="#">Toutes les Commandes</a>
-
-        <a href="#">En Attente</a>
-
-        <a href="#">Livrées</a>
-
-      </div>
-
-    </div>
-
-    <!-- CLIENTS -->
-
-    <div class="menu-item">
-
-      <button class="menu-btn">
-
-        <span>👥 Clients</span>
-
-        ▼
-
-      </button>
-
-      <div class="sub-menu">
-
-        <a href="#">Tous les Clients</a>
-
-        <a href="#">VIP</a>
-
-        <a href="#">Bloqués</a>
-
-      </div>
-
-    </div>
-
-    <!-- SETTINGS -->
-
-    <div class="menu-item">
-
-      <button class="menu-btn">
-
-        <span>⚙️ Paramètres</span>
-
-        ▼
-
-      </button>
-
-      <div class="sub-menu">
-
-        <a href="#">Profil</a>
-
-        <a href="#">Sécurité</a>
-
-        <a href="#">Notifications</a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-    <!-- MAIN -->
-
-    <main class="main-content">
-
-      <!-- ========================= -->
-<!-- DASHBOARD -->
-<!-- ========================= -->
-
-<section class="dashboard-section">
-
-  <!-- TOP CARDS -->
-
-  <div class="dashboard-cards">
-
-    <div class="dashboard-card revenue-card">
-
-      <div>
-
-        <h3>Revenus Totaux</h3>
-
-        <h2 id="dashboard-revenue">
-          $0
-        </h2>
-
-      </div>
-
-      <i class="fa-solid fa-dollar-sign"></i>
-
-    </div>
-
-    <div class="dashboard-card orders-card">
-
-      <div>
-
-        <h3>Commandes</h3>
-
-        <h2 id="dashboard-orders">
-          0
-        </h2>
-
-      </div>
-
-      <i class="fa-solid fa-cart-shopping"></i>
-
-    </div>
-
-    <div class="dashboard-card clients-card">
-
-      <div>
-
-        <h3>Clients</h3>
-
-        <h2 id="dashboard-clients">
-          0
-        </h2>
-
-      </div>
-
-      <i class="fa-solid fa-users"></i>
-
-    </div>
-
-    <div class="dashboard-card products-card">
-
-      <div>
-
-        <h3>Produits</h3>
-
-        <h2 id="dashboard-products">
-          0
-        </h2>
-
-      </div>
-
-      <i class="fa-solid fa-box"></i>
-
-    </div>
-
-  </div>
-
-  <!-- SECOND ROW -->
-
-  <div class="dashboard-grid">
-
-    <!-- RECENT ORDERS -->
-
-    <div class="dashboard-box">
-
-      <div class="box-header">
-
-        <h3>
-          Commandes Récentes
-        </h3>
-
-      </div>
-
-      <div id="recent-orders">
-
-      </div>
-
-    </div>
-
-    <!-- BEST SELLERS -->
-
-    <div class="dashboard-box">
-
-      <div class="box-header">
-
-        <h3>
-          Best Sellers
-        </h3>
-
-      </div>
-
-      <div id="best-products">
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- THIRD ROW -->
-
-  <div class="dashboard-grid">
-
-    <!-- ACTIVITIES -->
-
-    <div class="dashboard-box">
-
-      <div class="box-header">
-
-        <h3>
-          Activités Récentes
-        </h3>
-
-      </div>
-
-      <div id="recent-activities">
-
-      </div>
-
-    </div>
-
-    <!-- QUICK ACTIONS -->
-
-    <div class="dashboard-box">
-
-      <div class="box-header">
-
-        <h3>
-          Actions Rapides
-        </h3>
-
-      </div>
-
-      <div class="quick-actions">
-
-        <button id="quick-add-product">
-          <i class="fa-solid fa-plus"></i>
-          Ajouter Produit
         </button>
 
-        <button id="quick-orders">
-          <i class="fa-solid fa-cart-shopping"></i>
-          Voir Commandes
+        <div class="sub-menu active">
+
+          <a href="#dashboard">
+
+            Vue Générale
+
+          </a>
+
+          <a href="#recent-orders">
+
+            Activités
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCTS -->
+
+      <div class="menu-item">
+
+        <button class="menu-btn">
+
+          <span>
+
+            <i class="fa-solid fa-box"></i>
+
+            Produits
+
+          </span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+
         </button>
 
-        <button id="quick-clients">
-          <i class="fa-solid fa-users"></i>
-          Voir Clients
+        <div class="sub-menu">
+
+          <a href="#product-form">
+
+            Ajouter Produit
+
+          </a>
+
+          <a href="#products-container">
+
+            Tous les Produits
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- COMMANDES -->
+
+      <div class="menu-item">
+
+        <button class="menu-btn">
+
+          <span>
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            Commandes
+
+          </span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+        <div class="sub-menu">
+
+          <a href="#orders-section">
+
+            Gestion Commandes
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CLIENTS -->
+
+      <div class="menu-item">
+
+        <button class="menu-btn">
+
+          <span>
+
+            <i class="fa-solid fa-users"></i>
+
+            Clients
+
+          </span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+        <div class="sub-menu">
+
+          <a href="#clients-section">
+
+            Gestion Clients
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- SETTINGS -->
+
+      <div class="menu-item">
+
+        <button class="menu-btn">
+
+          <span>
+
+            <i class="fa-solid fa-gear"></i>
+
+            Paramètres
+
+          </span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+        <div class="sub-menu">
+
+          <a href="#">
+
+            Profil
+
+          </a>
+
+          <a href="#">
+
+            Sécurité
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- LOGOUT -->
+
+      <div class="menu-item">
+
+        <button
+        class="menu-btn logout-btn"
+        id="logout-btn">
+
+          <span>
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Déconnexion
+
+          </span>
+
         </button>
 
       </div>
 
-    </div>
+    </nav>
 
-  </div>
+  </aside>
 
-  </section>
-      
-      <div class="top-bar">
+  <!-- ========================= -->
+  <!-- MAIN CONTENT -->
+  <!-- ========================= -->
+
+  <main class="main-content">
+
+    <!-- ========================= -->
+    <!-- TOP BAR -->
+    <!-- ========================= -->
+
+    <header class="top-bar">
+
+      <div class="top-left">
+
+        <button
+        class="menu-toggle"
+        aria-label="Ouvrir menu">
+
+          <i class="fa-solid fa-bars"></i>
+
+        </button>
 
         <h1>
-          Ajoute yon nouvo pwodwi
+          Dashboard Administrateur
         </h1>
 
       </div>
 
-      <!-- FORM -->
+      <div class="admin-profile">
+
+        <div class="admin-avatar">
+          A
+        </div>
+
+        <div>
+
+          <strong>
+            Admin
+          </strong>
+
+          <p>
+            Jloodna Global Trading
+          </p>
+
+        </div>
+
+      </div>
+
+    </header>
+
+    <!-- ========================= -->
+    <!-- DASHBOARD -->
+    <!-- ========================= -->
+
+    <section
+    class="dashboard-section"
+    id="dashboard">
+
+      <!-- CARDS -->
+
+      <div class="dashboard-cards">
+
+        <div class="dashboard-card revenue-card">
+
+          <div>
+
+            <h3>
+              Revenus Totaux
+            </h3>
+
+            <h2 id="dashboard-revenue">
+              $0
+            </h2>
+
+          </div>
+
+          <i class="fa-solid fa-dollar-sign"></i>
+
+        </div>
+
+        <div class="dashboard-card orders-card">
+
+          <div>
+
+            <h3>
+              Commandes
+            </h3>
+
+            <h2 id="dashboard-orders">
+              0
+            </h2>
+
+          </div>
+
+          <i class="fa-solid fa-cart-shopping"></i>
+
+        </div>
+
+        <div class="dashboard-card clients-card">
+
+          <div>
+
+            <h3>
+              Clients
+            </h3>
+
+            <h2 id="dashboard-clients">
+              0
+            </h2>
+
+          </div>
+
+          <i class="fa-solid fa-users"></i>
+
+        </div>
+
+        <div class="dashboard-card products-card">
+
+          <div>
+
+            <h3>
+              Produits
+            </h3>
+
+            <h2 id="dashboard-products">
+              0
+            </h2>
+
+          </div>
+
+          <i class="fa-solid fa-box"></i>
+
+        </div>
+
+      </div>
+
+      <!-- GRID -->
+
+      <div class="dashboard-grid">
+
+        <!-- RECENT ORDERS -->
+
+        <div class="dashboard-box">
+
+          <div class="box-header">
+
+            <h3>
+              Commandes Récentes
+            </h3>
+
+          </div>
+
+          <div id="recent-orders"></div>
+
+        </div>
+
+        <!-- BEST PRODUCTS -->
+
+        <div class="dashboard-box">
+
+          <div class="box-header">
+
+            <h3>
+              Best Sellers
+            </h3>
+
+          </div>
+
+          <div id="best-products"></div>
+
+        </div>
+
+      </div>
+
+      <!-- ACTIVITIES -->
+
+      <div class="dashboard-grid">
+
+        <div class="dashboard-box">
+
+          <div class="box-header">
+
+            <h3>
+              Activités Récentes
+            </h3>
+
+          </div>
+
+          <div id="recent-activities"></div>
+
+        </div>
+
+        <!-- QUICK ACTIONS -->
+
+        <div class="dashboard-box">
+
+          <div class="box-header">
+
+            <h3>
+              Actions Rapides
+            </h3>
+
+          </div>
+
+          <div class="quick-actions">
+
+            <button id="quick-add-product">
+
+              <i class="fa-solid fa-plus"></i>
+
+              Ajouter Produit
+
+            </button>
+
+            <button id="quick-orders">
+
+              <i class="fa-solid fa-cart-shopping"></i>
+
+              Voir Commandes
+
+            </button>
+
+            <button id="quick-clients">
+
+              <i class="fa-solid fa-users"></i>
+
+              Voir Clients
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- PRODUCT FORM -->
+    <!-- ========================= -->
+
+    <section class="form-section">
+
+      <div class="section-title">
+
+        <h2>
+          Ajouter un Produit
+        </h2>
+
+      </div>
 
       <div class="form-container">
 
         <form id="product-form">
 
-          <!-- NAME -->
+          <!-- PRODUCT NAME -->
 
           <div class="form-group">
 
-            <label>Non Pwodwi</label>
+            <label for="product-name">
 
-            <input type="text"
+              Nom Produit
+
+            </label>
+
+            <input
+            type="text"
             id="product-name"
             required>
 
@@ -440,9 +617,15 @@
 
           <div class="form-group">
 
-            <label>Pri ($)</label>
+            <label for="product-price">
 
-            <input type="number"
+              Prix ($)
+
+            </label>
+
+            <input
+            type="number"
+            min="1"
             id="product-price"
             required>
 
@@ -452,46 +635,52 @@
 
           <div class="form-group">
 
-            <label>Kategori</label>
+            <label for="product-category">
 
-            <select id="product-category"
+              Catégorie
+
+            </label>
+
+            <select
+            id="product-category"
             required>
 
               <option value="">
-                Chwazi kategori
+                Choisir catégorie
               </option>
 
-              <option>
-                Teknoloji
+              <option value="Technologie">
+                Technologie
               </option>
 
-              <option>
+              <option value="Fashion">
                 Fashion
               </option>
 
-              <option>
-                Elektwonik
+              <option value="Électronique">
+                Électronique
               </option>
 
-              <option>
-                Swen Pèsonèl
-              </option>
-
-              <option>
-                Kay & Biwo
+              <option value="Maison">
+                Maison
               </option>
 
             </select>
 
           </div>
 
-          <!-- IMAGE URL -->
+          <!-- IMAGE -->
 
           <div class="form-group">
 
-            <label>URL Foto Pwodwi</label>
+            <label for="product-image">
 
-            <input type="url"
+              URL Image
+
+            </label>
+
+            <input
+            type="url"
             id="product-image"
             placeholder="https://image.com/photo.jpg"
             required>
@@ -500,10 +689,13 @@
 
           <!-- PREVIEW -->
 
-          <div class="image-preview"
+          <div
+          class="image-preview"
           id="image-preview">
 
-            <p>Preview pwodwi</p>
+            <p>
+              Preview produit
+            </p>
 
           </div>
 
@@ -511,9 +703,14 @@
 
           <div class="form-group">
 
-            <label>Deskripsyon</label>
+            <label for="product-description">
 
-            <textarea id="product-description"
+              Description
+
+            </label>
+
+            <textarea
+            id="product-description"
             required></textarea>
 
           </div>
@@ -522,32 +719,35 @@
 
           <div class="checkbox-group">
 
-            <input type="checkbox"
+            <input
+            type="checkbox"
             id="featured-product">
 
             <label for="featured-product">
 
-              Mete sou Akèy kòm Best Seller
+              Afficher comme Best Seller
 
             </label>
 
           </div>
 
-          <!-- SUBMIT -->
+          <!-- BUTTON -->
 
-          <button type="submit"
+          <button
+          type="submit"
           class="publish-btn">
 
-            Pibliye Pwodwi
+            Publier Produit
 
           </button>
 
           <!-- SUCCESS -->
 
-          <div class="success-message"
+          <div
+          class="success-message"
           id="success-message">
 
-            Pwodwi ajoute avèk siksè.
+            Produit ajouté avec succès.
 
           </div>
 
@@ -555,241 +755,285 @@
 
       </div>
 
-      <!-- PRODUCTS LIST -->
+    </section>
 
-      <div class="products-list">
+    <!-- ========================= -->
+    <!-- PRODUCTS -->
+    <!-- ========================= -->
 
-        <h2>Tout Pwodwi yo</h2>
+    <section class="products-list">
 
-        <div id="products-container"></div>
+      <div class="section-title">
+
+        <h2>
+          Tous les Produits
+        </h2>
 
       </div>
 
-      <!-- ========================= -->
-<!-- COMMANDES -->
+      <div id="products-container"></div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- ORDERS -->
+    <!-- ========================= -->
+
+    <section
+    class="orders-section"
+    id="orders-section">
+
+      <div class="section-header">
+
+        <h2>
+
+          <i class="fa-solid fa-cart-shopping"></i>
+
+          Gestion Commandes
+
+        </h2>
+
+        <div class="order-stats">
+
+          <div class="stat-card">
+
+            <span id="total-orders">
+              0
+            </span>
+
+            <p>
+              Commandes
+            </p>
+
+          </div>
+
+          <div class="stat-card">
+
+            <span id="pending-orders">
+              0
+            </span>
+
+            <p>
+              En attente
+            </p>
+
+          </div>
+
+          <div class="stat-card">
+
+            <span id="completed-orders">
+              0
+            </span>
+
+            <p>
+              Livrées
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- FILTER -->
+
+      <div class="orders-filter">
+
+        <input
+        type="text"
+        id="search-order"
+        placeholder="Recherche commande">
+
+        <select id="status-filter">
+
+          <option value="all">
+            Tous les statuts
+          </option>
+
+          <option value="pending">
+            En attente
+          </option>
+
+          <option value="processing">
+            Préparation
+          </option>
+
+          <option value="shipping">
+            Expédition
+          </option>
+
+          <option value="completed">
+            Livrée
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- TABLE -->
+
+      <div class="orders-table-container">
+
+        <table class="orders-table">
+
+          <thead>
+
+            <tr>
+
+              <th>ID</th>
+              <th>Client</th>
+              <th>Téléphone</th>
+              <th>Produits</th>
+              <th>Total</th>
+              <th>Paiement</th>
+              <th>Statut</th>
+              <th>Date</th>
+              <th>Actions</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody id="orders-table-body"></tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- CLIENTS -->
+    <!-- ========================= -->
+
+    <section
+    class="clients-section"
+    id="clients-section">
+
+      <div class="clients-header">
+
+        <h2>
+
+          <i class="fa-solid fa-users"></i>
+
+          Gestion Clients
+
+        </h2>
+
+        <div class="client-stats">
+
+          <div class="client-stat-card">
+
+            <span id="total-clients">
+              0
+            </span>
+
+            <p>
+              Total Clients
+            </p>
+
+          </div>
+
+          <div class="client-stat-card">
+
+            <span id="active-clients">
+              0
+            </span>
+
+            <p>
+              Clients Actifs
+            </p>
+
+          </div>
+
+          <div class="client-stat-card">
+
+            <span id="vip-clients">
+              0
+            </span>
+
+            <p>
+              Clients VIP
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- FILTER -->
+
+      <div class="clients-filter">
+
+        <input
+        type="text"
+        id="search-client"
+        placeholder="Recherche client">
+
+        <select id="client-filter">
+
+          <option value="all">
+            Tous
+          </option>
+
+          <option value="vip">
+            VIP
+          </option>
+
+          <option value="active">
+            Actifs
+          </option>
+
+          <option value="blocked">
+            Bloqués
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- TABLE -->
+
+      <div class="clients-table-container">
+
+        <table class="clients-table">
+
+          <thead>
+
+            <tr>
+
+              <th>Client</th>
+              <th>Email</th>
+              <th>Téléphone</th>
+              <th>Commandes</th>
+              <th>Total Dépensé</th>
+              <th>Statut</th>
+              <th>Inscription</th>
+              <th>Actions</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody id="clients-table-body"></tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<!-- ========================= -->
+<!-- JS -->
 <!-- ========================= -->
 
-<section class="orders-section">
-
-  <div class="section-header">
-
-    <h2>
-      <i class="fa-solid fa-cart-shopping"></i>
-      Gestion des Commandes
-    </h2>
-
-    <div class="order-stats">
-
-      <div class="stat-card">
-        <span id="total-orders">0</span>
-        <p>Commandes</p>
-      </div>
-
-      <div class="stat-card">
-        <span id="pending-orders">0</span>
-        <p>En attente</p>
-      </div>
-
-      <div class="stat-card">
-        <span id="completed-orders">0</span>
-        <p>Livrées</p>
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- FILTER -->
-
-  <div class="orders-filter">
-
-    <input type="text"
-    id="search-order"
-    placeholder="Rechercher client ou commande">
-
-    <select id="status-filter">
-
-      <option value="all">
-        Tous les statuts
-      </option>
-
-      <option value="pending">
-        En attente
-      </option>
-
-      <option value="processing">
-        En préparation
-      </option>
-
-      <option value="shipping">
-        Expédition
-      </option>
-
-      <option value="completed">
-        Livrée
-      </option>
-
-      <option value="cancelled">
-        Annulée
-      </option>
-
-    </select>
-
-  </div>
-
-  <!-- TABLE -->
-
-  <div class="orders-table-container">
-
-    <table class="orders-table">
-
-      <thead>
-
-        <tr>
-
-          <th>ID</th>
-          <th>Client</th>
-          <th>Téléphone</th>
-          <th>Produits</th>
-          <th>Total</th>
-          <th>Paiement</th>
-          <th>Statut</th>
-          <th>Date</th>
-          <th>Actions</th>
-
-        </tr>
-
-      </thead>
-
-      <tbody id="orders-table-body">
-
-      </tbody>
-
-    </table>
-
-  </div>
-
-</section>
-
-
-      <!-- ========================= -->
-<!-- CLIENTS -->
-<!-- ========================= -->
-
-<section class="clients-section">
-
-  <div class="clients-header">
-
-    <h2>
-      <i class="fa-solid fa-users"></i>
-      Gestion des Clients
-    </h2>
-
-    <div class="client-stats">
-
-      <div class="client-stat-card">
-
-        <span id="total-clients">
-          0
-        </span>
-
-        <p>Total Clients</p>
-
-      </div>
-
-      <div class="client-stat-card">
-
-        <span id="active-clients">
-          0
-        </span>
-
-        <p>Clients Actifs</p>
-
-      </div>
-
-      <div class="client-stat-card">
-
-        <span id="vip-clients">
-          0
-        </span>
-
-        <p>Clients VIP</p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- FILTER -->
-
-  <div class="clients-filter">
-
-    <input type="text"
-    id="search-client"
-    placeholder="Recherche client...">
-
-    <select id="client-filter">
-
-      <option value="all">
-        Tous les clients
-      </option>
-
-      <option value="vip">
-        VIP
-      </option>
-
-      <option value="active">
-        Actifs
-      </option>
-
-      <option value="blocked">
-        Bloqués
-      </option>
-
-    </select>
-
-  </div>
-
-  <!-- TABLE -->
-
-  <div class="clients-table-container">
-
-    <table class="clients-table">
-
-      <thead>
-
-        <tr>
-
-          <th>Client</th>
-          <th>Email</th>
-          <th>Téléphone</th>
-          <th>Commandes</th>
-          <th>Total Dépensé</th>
-          <th>Statut</th>
-          <th>Date Inscription</th>
-          <th>Actions</th>
-
-        </tr>
-
-      </thead>
-
-      <tbody id="clients-table-body">
-
-      </tbody>
-
-    </table>
-
-  </div>
-
-</section>
-
-      
-    </main>
-
-  </div>
-
-  <script src="admin.js"></script>
+<script
+src="./admin.js"></script>
 
 </body>
-                </html>
+  </html>
