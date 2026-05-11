@@ -2,10 +2,9 @@
 <html lang="ht">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-  content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>JLOODNA Cart</title>
+  <title>JLOODNA | Panyen Mwen</title>
 
   <link rel="stylesheet" href="cart.css">
 
@@ -16,7 +15,6 @@
 <body>
 
   <!-- HEADER -->
-
   <header class="header">
 
     <div class="logo">
@@ -24,13 +22,14 @@
     </div>
 
     <nav class="nav">
-      <a href="#">Akèy</a>
-      <a href="#">Boutik</a>
-      <a href="#">Sou Nou</a>
-      <a href="#">Kontak</a>
+      <a href="index.html">Akèy</a>
+      <a href="shop.html">Boutik</a>
+      <a href="about.html">Sou Nou</a>
+      <a href="contact.html">Kontak</a>
     </nav>
 
   </header>
+
 
   <!-- CART SECTION -->
 
@@ -42,11 +41,19 @@
 
       <h1>Panyen Mwen</h1>
 
-      <div id="cart-items">
+      <div id="cart-items"></div>
 
+      <div id="empty-cart" class="empty-cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <h2>Panyen ou vid</h2>
+        <p>Ajoute pwodwi pou kontinye.</p>
+        <a href="shop.html" class="shop-btn">
+          Ale nan Boutik
+        </a>
       </div>
 
     </div>
+
 
     <!-- RIGHT -->
 
@@ -56,35 +63,28 @@
 
       <div class="summary-line">
         <span>Sous-total :</span>
-        <strong id="subtotal">
-          $0
-        </strong>
+        <strong id="subtotal">$0</strong>
       </div>
 
       <div class="summary-line">
         <span>Livrezon :</span>
-        <strong id="shipping">
-          $15
-        </strong>
+        <strong id="shipping">$15</strong>
       </div>
 
       <div class="summary-total">
         <span>Total :</span>
-        <strong id="total">
-          $0
-        </strong>
+        <strong id="total">$0</strong>
       </div>
 
-      <a href="checkout.html"
-      class="checkout-btn">
+      <button id="checkout-btn" class="checkout-btn">
         PASER KÒMAND LAN
-      </a>
+      </button>
 
     </div>
 
   </section>
 
-  <script src="cart.js"></script>
 
+  <script src="cart.js"></script>
 </body>
-</html>
+  </html>
