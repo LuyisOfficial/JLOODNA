@@ -245,3 +245,190 @@ textarea{
   }
 
   }
+
+
+/* ========================= */
+/* ORDERS SECTION */
+/* ========================= */
+
+.orders-section{
+  margin-top:50px;
+  background:#fff;
+  padding:30px;
+  border-radius:20px;
+}
+
+.section-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
+}
+
+.section-header h2{
+  font-size:1.5rem;
+}
+
+.order-stats{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.stat-card{
+  background:#f5f5f5;
+  padding:15px 25px;
+  border-radius:15px;
+  text-align:center;
+}
+
+.stat-card span{
+  display:block;
+  font-size:1.5rem;
+  font-weight:bold;
+  color:#FFD700;
+}
+
+.orders-filter{
+  display:flex;
+  gap:15px;
+  margin-bottom:25px;
+  flex-wrap:wrap;
+}
+
+.orders-filter input,
+.orders-filter select{
+  padding:14px;
+  border:1px solid #ddd;
+  border-radius:10px;
+}
+
+.orders-filter input{
+  flex:1;
+  min-width:250px;
+}
+
+.orders-table-container{
+  width:100%;
+  overflow-x:auto;
+}
+
+.orders-table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:1100px;
+}
+
+.orders-table th{
+  background:#111;
+  color:#fff;
+  padding:15px;
+  text-align:left;
+}
+
+.orders-table td{
+  padding:15px;
+  border-bottom:1px solid #eee;
+}
+
+.order-product{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:8px;
+}
+
+.order-product img{
+  width:50px;
+  height:50px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+.status{
+  padding:8px 12px;
+  border-radius:30px;
+  font-size:0.85rem;
+  font-weight:bold;
+}
+
+.pending{
+  background:#fff3cd;
+  color:#856404;
+}
+
+.processing{
+  background:#d1ecf1;
+  color:#0c5460;
+}
+
+.shipping{
+  background:#cce5ff;
+  color:#004085;
+}
+
+.completed{
+  background:#d4edda;
+  color:#155724;
+}
+
+.cancelled{
+  background:#f8d7da;
+  color:#721c24;
+}
+
+.action-buttons{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.action-buttons button{
+  border:none;
+  padding:10px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:0.9rem;
+}
+
+.view-btn{
+  background:#111;
+  color:#fff;
+}
+
+.delete-order-btn{
+  background:red;
+  color:#fff;
+}
+
+.status-select{
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .orders-section{
+    padding:20px;
+  }
+
+  .section-header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .order-stats{
+    width:100%;
+  }
+
+  .stat-card{
+    flex:1;
+  }
+
+  }
+
