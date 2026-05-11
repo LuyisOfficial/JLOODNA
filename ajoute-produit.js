@@ -231,3 +231,289 @@ function deleteProduct(index){
   }
 
 }
+
+
+// =========================
+// COMMANDES DATABASE
+// =========================
+
+// Exemple structure commande réelle :
+
+/*
+{
+  id: 1001,
+  customer: "Jean Pierre",
+  phone: "+509 00000000",
+  payment: "MonCash",
+  total: 250,
+  status: "pending",
+  date: "2026-05-11",
+  products:[
+    {
+      name:"iPhone",
+      image:"img.jpg",
+      quantity:1
+    }
+  ]
+}
+*/
+
+let orders =
+JSON.parse(localStorage.getItem("jloodnaOrders"))
+|| [];
+
+
+// =========================
+// RENDER COMMANDES
+// =========================
+
+function renderOrders(){
+
+  const tbody =
+  document.getElementById("orders-table-body");
+
+  tbody.innerHTML = "";
+
+  let pending = 0;
+  let completed = 0;
+
+  orders.forEach((order,index) => {
+
+    if(order.status === "pending"){
+      pending++;
+    }
+
+    if(order.status === "completed"){
+      completed++;
+    }
+
+    let productsHTML = "";
+
+    order.products.forEach(product => {
+
+      productsHTML += `
+
+        <div class="order-product">
+
+          <img src="${product.image}">
+
+          <div>
+            <strong>${product.name}</strong>
+            <p>Qté : ${product.quantity}</p>
+          </div>
+
+        </div>
+
+      `;
+
+    });
+
+    tbody.innerHTML += `
+
+      <tr>
+
+        <td>#${order.id}</td>
+
+        <td>${order.customer}</td>
+
+        <td>${order.phone}</td>
+
+        <td>${productsHTML}</td>
+
+        <td>$${order.total}</td>
+
+        <td>${order.payment}</td>
+
+        <td>
+
+          <select
+          class="status-select"
+          onchange="updateOrderStatus(${index}, this.value)">
+
+            <option value="pending"
+            ${order.status === "pending" ? "selected" : ""}>
+              En attente
+            </option>
+
+            <option value="processing"
+            ${order.status === "processing" ? "selected" : ""}>
+              Préparation
+            </option>
+
+            <option value="shipping"
+            ${order.status === "shipping" ? "selected" : ""}>
+              Expédition
+            </option>
+
+            <option value="completed"
+            ${order.status === "completed" ? "selected" : ""}>
+              Livrée
+            </option>
+
+            <option value="cancelled"
+            ${order.status === "cancelled" ? "selected" : ""}>
+              Annulée
+            </option>
+
+          </select>
+
+        </td>
+
+        <td>${order.date}</td>
+
+        <td>
+
+          <div class="action-buttons">
+
+            <button class="view-btn"
+            onclick="viewOrder(${index})">
+
+              Voir
+
+            </button>
+
+            <button class="delete-order-btn"
+            onclick="deleteOrder(${index})">
+
+              Supprimer
+
+            </button>
+
+          </div>
+
+        </td>
+
+      </tr>
+
+    `;
+
+  });
+
+  // STATS
+
+  document.getElementById("total-orders")
+  .textContent = orders.length;
+
+  document.getElementById("pending-orders")
+  .textContent = pending;
+
+  document.getElementById("completed-orders")
+  .textContent = completed;
+
+}
+
+renderOrders();
+
+
+// =========================
+// UPDATE STATUS
+// =========================
+
+function updateOrderStatus(index,status){
+
+  orders[index].status = status;
+
+  localStorage.setItem(
+    "jloodnaOrders",
+    JSON.stringify(orders)
+  );
+
+  renderOrders();
+
+}
+
+
+// =========================
+// DELETE ORDER
+// =========================
+
+function deleteOrder(index){
+
+  if(confirm("Supprimer commande ?")){
+
+    orders.splice(index,1);
+
+    localStorage.setItem(
+      "jloodnaOrders",
+      JSON.stringify(orders)
+    );
+
+    renderOrders();
+
+  }
+
+}
+
+
+// =========================
+// VIEW ORDER
+// =========================
+
+function viewOrder(index){
+
+  const order = orders[index];
+
+  alert(
+`
+Commande #${order.id}
+
+Client : ${order.customer}
+
+Téléphone : ${order.phone}
+
+Paiement : ${order.payment}
+
+Total : $${order.total}
+
+Statut : ${order.status}
+`
+  );
+
+}
+
+
+// =========================
+// SEARCH FILTER
+// =========================
+
+document.getElementById("search-order")
+.addEventListener("input", filterOrders);
+
+document.getElementById("status-filter")
+.addEventListener("change", filterOrders);
+
+function filterOrders(){
+
+  const search =
+  document.getElementById("search-order")
+  .value.toLowerCase();
+
+  const status =
+  document.getElementById("status-filter")
+  .value;
+
+  const rows =
+  document.querySelectorAll(
+    "#orders-table-body tr"
+  );
+
+  rows.forEach(row => {
+
+    const text =
+    row.innerText.toLowerCase();
+
+    const matchesSearch =
+    text.includes(search);
+
+    const matchesStatus =
+    status === "all" ||
+    text.includes(status);
+
+    row.style.display =
+    matchesSearch && matchesStatus
+    ? ""
+    : "none";
+
+  });
+
+    }
